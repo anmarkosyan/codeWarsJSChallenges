@@ -1,5 +1,6 @@
 // ========================== totalPrice ===================
 //Find total price in restaurant , if we have price, tipPercent, taxPercent
+//(100 + 15% + 14%) = total
 //=================================================
 
 
@@ -9,4 +10,4 @@ function totalPrice(price, tipPercent, taxPercent){
     return +total.toFixed(2);
 }
 console.log(totalPrice(100, 15, 12));
-console.log(totalPrice(122, 13, 8));
+console.log(totalPrice(122,  13, 8));
