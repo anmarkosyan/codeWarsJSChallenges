@@ -16,3 +16,19 @@ function isPowerOfTwo(n){
 console.log(isPowerOfTwo(5))// false
 console.log(isPowerOfTwo(16))// true
 console.log(isPowerOfTwo(2096))// true
+
+
+
+//Find power of two
+// N = 2 ** K
+function powerOf2(n){
+    let k = 0;
+    while( n > 1 && n % 2 === 0){
+        n /= 2;
+        k++;
+    }
+
+    return k;
+}
+console.log(powerOf2(32));// 5
+console.log(powerOf2(4));// 2
