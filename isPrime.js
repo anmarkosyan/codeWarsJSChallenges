@@ -1,5 +1,6 @@
 //========================== is Prime =========================
 //write a function to check if a given number is prime or not
+//prime is a whole number that cannot be made by multiplying other whole numbers
 //=======================================================
 
 
