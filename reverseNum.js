@@ -16,3 +16,20 @@ function reverseNum(n){
 }
 console.log(reverseNum(123));//321
 console.log(reverseNum(100));//1
+
+
+
+
+//
+//123 // [3, 2, 1]
+function arrayOfDigits(n){
+    let arr = [];
+    let last;
+    do{
+        last = n % 10;
+        arr.push(last);
+        n = Math.floor(n / 10)
+    }while(n >0)
+    return arr;
+}
+console.log(arrayOfDigits(123));//[3, 2, 1]
