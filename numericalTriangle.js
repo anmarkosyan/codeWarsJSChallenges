@@ -49,4 +49,21 @@ function starTriangle2(n){
     }
     return str
 }
-console.log(starTriangle2(4))
+console.log(starTriangle2(4));
+
+// or like this
+//  *
+// ***
+//*****
+
+function drawTriangle2 (n){
+    let str = '';
+    for (let i = 1; i <= n; i += 2){
+        str = str + ' '.repeat((n - i) / 2) + '*'.repeat(i);
+        if (i < n) {
+            str = str + '\n';
+        }
+    }
+    return str;
+}
+console.log(drawTriangle2(5));
