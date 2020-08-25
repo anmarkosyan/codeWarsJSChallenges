@@ -26,3 +26,15 @@ return arr;
 }
 console.log(powerOfTwo(2));//[1, 2, 4]
 console.log(powerOfTwo(4));//[1, 2, 4, 8, 16]
+
+
+function sumOfSquare(n){
+    let sum = 0;
+    let int = 1;
+    while(int <= n){
+        sum += Math.pow(int, 2);
+        int++;
+    }
+    return sum;
+}
+console.log(sumOfSquare(3));// 14
