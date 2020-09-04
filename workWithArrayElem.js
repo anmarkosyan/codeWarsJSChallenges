@@ -114,3 +114,17 @@ const numberOfOrderedTriples = arr => {
 }
 console.log(numberOfOrderedTriples([1, 25, 3, 7, 15, 12]));// 1 =>3,7,15
 console.log(numberOfOrderedTriples([1, 25, 3, 20, 15, 12]));// 0
+
+//============================= first Negative =============================
+//find first negative number and return its [element, index]
+const firstNegative = arr => {
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] < 0){
+            return [arr[i], i];
+        }
+
+    }
+    return undefined;
+
+}
+console.log(firstNegative([0, 25, -3, 7, 15, -1, 12]));// [-3, 2]
