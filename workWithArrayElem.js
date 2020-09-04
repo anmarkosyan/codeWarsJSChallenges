@@ -68,5 +68,18 @@ return count;
 console.log(countOfPositivePairs([0, 25, 3, -2, 5]));//1 => 25 and 3
 console.log(countOfPositivePairs( [1,7,4,-1]));//2 => 1,7 and 7,4
 
+//================= first non-consecutive number ============
+//https://www.codewars.com/kata/58f8a3a27a5c28d92e000144/train/javascript
+//Your task is to find the first element of an array that is not consecutive.
+//By not consecutive we mean not exactly 1 larger than the previous element of the array.
+
+const firstNonConsecutive = arr => {
+    for(let num = 1; num < arr.length; num++){
+        if(arr[num  - 1] + 1 !== arr[num])
+            return arr[num];
+    }
+    return null
+}
+console.log(firstNonConsecutive([1,2,3,4,6,7,8]));//6
 
 
