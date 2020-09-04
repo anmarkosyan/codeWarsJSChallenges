@@ -74,9 +74,15 @@ console.log(countOfPositivePairs( [1,7,4,-1]));//2 => 1,7 and 7,4
 //By not consecutive we mean not exactly 1 larger than the previous element of the array.
 
 const firstNonConsecutive = arr => {
-    for(let num = 1; num < arr.length; num++){
-        if(arr[num  - 1] + 1 !== arr[num])
-            return arr[num];
+    for(let i = 0; i < arr.length; i++){
+        //#1
+        // if(arr[i  - 1] + 1 !== arr[i]) {
+        //     return arr[i];}
+
+        //#2
+        if(arr[i] + 1 !== arr[i + 1]){
+            return arr[i + 1];
+        }
     }
     return null
 }
