@@ -88,4 +88,18 @@ const firstNonConsecutive = arr => {
 }
 console.log(firstNonConsecutive([1,2,3,4,6,7,8]));//6
 
+//======================= count Opposite Signs Pairs ==========
+
+const countOppositeSignsPairs = arr => {
+    let count = 0;
+    for(let i = 0; i < arr.length; i++){
+        if( arr[i] > 0 && arr[i + 1] < 0 || arr[i] < 0 && arr[i + 1] >0) {
+            count++;
+        }
+
+    }
+    return count ;
+}
+console.log(countOppositeSignsPairs([1, 25, 3, -2, 5]));//2 => 3,-2 and -2,5
+
 
