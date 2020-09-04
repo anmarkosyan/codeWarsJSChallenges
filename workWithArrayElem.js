@@ -102,4 +102,15 @@ const countOppositeSignsPairs = arr => {
 }
 console.log(countOppositeSignsPairs([1, 25, 3, -2, 5]));//2 => 3,-2 and -2,5
 
-
+//=================== number Of Ordered Triples =======================
+const numberOfOrderedTriples = arr => {
+    let count = 0;
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] < arr[i + 1] && arr[i] > arr[i -1]){
+            count++;
+        }
+    }
+    return count;
+}
+console.log(numberOfOrderedTriples([1, 25, 3, 7, 15, 12]));// 1 =>3,7,15
+console.log(numberOfOrderedTriples([1, 25, 3, 20, 15, 12]));// 0
