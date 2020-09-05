@@ -174,9 +174,81 @@ console.log(fahrenheit(20, 25));//[68, 69.8, 71.6, 73.4, 75.2, 77]
 
 const doublePrices = prices => {
     let double = [];
-    for(let i = 0; i < prices.length; i++){
-        double.push(prices[i] * 2)
+    for(let num of prices){
+        double.push(num * 2)
     }
     return double;
 }
 console.log(doublePrices([20, 50, 55]));//[ 40, 100, 110 ]
+
+//================== find first Negative In Array ===================
+
+const isNegativeInArray = arr => {
+    for(let dig of arr){
+        if(dig < 0){
+            return true;
+        }
+    }
+   return false;
+}
+console.log(isNegativeInArray([20, -24, -56, 7]));//true
+console.log(isNegativeInArray([20, 2, 4, 6,  7]));//false
+
+//================= find first  zero in array =================
+
+const isZeroInArray = arr => {
+    for(let dig of arr){
+        if(dig === 0){
+            return true;
+        }
+    }
+    return false;
+}
+console.log(isZeroInArray([20, -26, 0, 13]));// true
+console.log(isZeroInArray([20, -26, 13]));// false
+
+//==================== find first number equal sum of left and right numbers ======
+//Write a function isElementInArray that takes an array arr as an argument and,
+//if the array contains at least one element equal to the sum of its neighbors on
+//the left and right, finds the first such element and returns a string like this:
+
+const isElementInArray = arr => {
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] === arr[i - 1] + arr[i + 1]){
+            return `true: it is ${arr[i]}`;
+        }
+    }
+    return false;
+
+}
+console.log(isElementInArray([1, 5, 4, 1, 0, -1]));//"true: it is 5" 1 + 4 = 5
+console.log(isElementInArray([1, 2, 4, 1, 0, -1]));//"true: it is 0" 1 + -1 = 0
+console.log(isElementInArray([1, 2, 4, 1, 3, -1]));//false
+
+//====================== count of Names ================
+//return count of names that they length is 5
+
+const countOfNames = names => {
+    let count = 0;
+    for(let word of names){
+        if(word.length === 5){
+            count++;
+        }
+    }
+    return count;
+}
+console.log(countOfNames(['Noah', 'Liam', 'William', 'Mason', 'James']));//2
+
+//====================== find first equal elements in array ========================
+
+const equalElementsInArray = arr => {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = arr.length - 1; j > arr[i]; j--) {
+            if (arr[i] === arr[j]) {
+                return [arr[i], arr[j]];
+            }
+        }
+    }
+    return arr.length === 0 ? [] : "All elements are different";
+}
+console.log(equalElementsInArray([1, 3, 1, 9, 2, 5, 3, 10]));//[1, 1]
