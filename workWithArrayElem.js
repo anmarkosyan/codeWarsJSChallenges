@@ -155,3 +155,17 @@ const lastEvenElement = arr => {
 
 }
 console.log(lastEvenElement([0, 8, 4, 1]));// [4, 2]
+
+//========================= fahrenheit =================
+
+const fahrenheit = (t1, t2) => {
+    let arr = [];
+    for(let i = t1; i <= t2; i++){
+        let f = (9 / 5) * i + 32;
+        arr.push(+f.toFixed(1));
+    }
+    return arr;
+
+}
+console.log(fahrenheit(1, 10));//[33.8, 35.6, 37.4, 39.2, 41, 42.8, 44.6, 46.4, 48.2, 50]
+console.log(fahrenheit(20, 25));//[68, 69.8, 71.6, 73.4, 75.2, 77]
