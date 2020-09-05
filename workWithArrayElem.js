@@ -140,3 +140,18 @@ const firstBigger = arr => {
     return undefined;
 }
 console.log(firstBigger([0, 8, 4, 1]));// 8 => 8 > 4
+
+//========================= last Even Element ===============
+//return last even [element, index]
+
+const lastEvenElement = arr => {
+    for(let i = arr.length -1; i >= 0; i--){
+        if(arr[i] % 2 === 0){
+            return [arr[i], i];
+        }
+    }
+    return undefined;
+
+
+}
+console.log(lastEvenElement([0, 8, 4, 1]));// [4, 2]
