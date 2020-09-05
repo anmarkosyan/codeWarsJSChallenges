@@ -169,3 +169,14 @@ const fahrenheit = (t1, t2) => {
 }
 console.log(fahrenheit(1, 10));//[33.8, 35.6, 37.4, 39.2, 41, 42.8, 44.6, 46.4, 48.2, 50]
 console.log(fahrenheit(20, 25));//[68, 69.8, 71.6, 73.4, 75.2, 77]
+
+//================== double prices ======================
+
+const doublePrices = prices => {
+    let double = [];
+    for(let i = 0; i < prices.length; i++){
+        double.push(prices[i] * 2)
+    }
+    return double;
+}
+console.log(doublePrices([20, 50, 55]));//[ 40, 100, 110 ]
