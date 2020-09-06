@@ -228,16 +228,34 @@ console.log(isElementInArray([1, 2, 4, 1, 3, -1]));//false
 //====================== count of Names ================
 //return count of names that they length is 5
 
-const countOfNames = names => {
+const countOfNames = arr => {
     let count = 0;
-    for(let word of names){
+    for(let word of arr){
         if(word.length === 5){
             count++;
         }
     }
     return count;
 }
-console.log(countOfNames(['Noah', 'Liam', 'William', 'Mason', 'James']));//2
+let names = ['Noah', 'Liam', 'William', 'Mason', 'James']
+console.log(countOfNames(names));//2
+
+//find words that length is 5
+const arrFilter = arr => {
+    // #1 using loop
+    // let res = [];
+    // for(let word of arr){
+    //     if(word.length === 5){
+    //         res.push(word);
+    //     }
+    // }
+    // return res;
+    //#2 using filter() method
+    return arr.filter(el => el.length === 5);
+
+
+}
+console.log(arrFilter(names));//['Mason', 'James']
 
 //====================== find first equal elements in array ========================
 
