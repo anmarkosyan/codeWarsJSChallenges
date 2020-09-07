@@ -112,6 +112,99 @@ const words = arr => {
 }
 console.log(words(["a", "big", "elephant"]));//[ 'a', 'elephant' ]
 
+//=============================== max abs value ================
+
+const maxAbsValue = arr => {
+    let maxAbs = Math.abs(arr[0]);
+    let maxWord = arr[0];
+    for(let i = 1; i < arr.length; i++){
+        if(Math.abs(arr[i]) > maxAbs){
+            maxAbs = Math.abs(arr[i]);
+            maxWord = arr[i];
+        }
+    }
+return maxWord
+}
+console.log(maxAbsValue([3, 7, -8, 1]));// -8
+console.log(maxAbsValue([-11, 6, 12]));//12
+
+//====================== max Even Number ===================
+
+const maxEven = arr => {
+   let even = [];
+   for(let num of arr){
+       if(num % 2 === 0){
+           even.push(num);
+       }
+   }
+   let max = even[0];
+   for(let i = 1; i < even.length; i++){
+       if(even[i] > max){
+           max = even[i];
+       }
+   }
+   return max;
+}
+console.log(maxEven([11, 12, 3, 35]));//12
+console.log(maxEven([29,18]));//18
+console.log(maxEven( [17,13,9,15,17]));//undefined
+
+//===================== min Odd number ===================
+
+const minOdd = arr => {
+    let odd = [];
+    for(let num of arr){
+        if(num % 2 !== 0){
+            odd.push(num);
+        }
+    }
+    let min = odd[0];
+    for(let i = 1; i < odd.length; i++){
+        if(odd[i] < min){
+            min = odd[i];
+        }
+    }
+    return min;
+
+}
+console.log(minOdd([2, 3, 4, 8, 17, 18]));//3
+console.log(minOdd([3, 3]));//3
+console.log(minOdd([2, 4]));//undefined
+
+//====================== most Expensive Car ==================
+
+
+const mostExpensiveCar = arr => {
+    let maxPrice = arr[0][1];
+    let bestCar = arr[0][0];
+    for(let i = 1; i < arr.length; i++){
+        if(arr[i][1] > maxPrice){
+            maxPrice = arr[i][1];
+            bestCar = arr[i][0]
+        }
+
+    }
+    return  bestCar;
+}
+console.log(mostExpensiveCar([["Honda", 18500], ["Toyota", 21200], ["BMW", 19900]]));//'Toyota'
+
+//============================ largest Number Of Mushrooms ==========================
+
+const largestNumberOfMushrooms = arr => {
+    let number = arr[0][1];
+    let name = arr[0][0];
+    for(let i = 1; i < arr.length; i++){
+        if(arr[i][1] > number){
+            number = arr[i][1];
+            name = arr[i][0];
+        }
+    }
+    return `${name}: ${number}`;
+
+}
+console.log(largestNumberOfMushrooms([["Maria", 15], ["Anna", 21], ["Ivan", 32]]));//'Ivan: 32'
+
+
 
 
 
