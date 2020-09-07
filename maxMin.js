@@ -55,3 +55,93 @@ const longestWord = text => {
 }
 console.log(longestWord('hi my name is bnushi so what is your name my friend anushi '));// anushi
 
+//==================== replace first max and min ========================
+
+const changeMaxAndMin = arr => {
+    let min = arr[0];
+    let max = arr[0];
+    let minInd = 0;
+    let maxInd = 0;
+    for(let i = 1; i < arr.length; i++){
+        if(arr[i] < min){
+            min = arr[i];
+            minInd = i;
+        }else if(arr[i] > max){
+            max = arr[i];
+            maxInd = i;
+        }
+    }
+    arr[minInd] = max;
+    arr[maxInd] = min;
+    return arr;
+}
+console.log(changeMaxAndMin([3, 4, 8, 4, 1, 2, 1]));// [3, 4, 1, 4, 8, 2, 1]
+
+//================== largest word in array ========================
+
+const theLongestWord = arr => {
+    let maxLength = arr[0].length,  maxWord = arr[0];
+    for(let i = 1; i < arr.length; i++){
+        if(arr[i].length > maxLength){
+            maxLength = arr[i].length;
+            maxWord = arr[i];
+        }
+    }
+    return maxWord;
+}
+console.log(theLongestWord(["a", "big", "elephant"])); //'elephant'
+console.log(theLongestWord(["test"]));//'test'
+
+//============== shortest and largest word in array =====================
+
+const words = arr => {
+    let maxLength = arr[0].length;
+    let minLength = arr[0].length;
+    let maxWord = arr[0];
+    let minWord = arr[0];
+    for(let i = 1; i < arr.length; i++){
+       if(arr[i].length < minLength){
+           minLength = arr[i].length;
+           minWord = arr[i];
+       }else if(arr[i].length > maxLength){
+           maxLength = arr[i].length;
+           maxWord = arr[i];
+       }
+    }
+    return [minWord, maxWord];
+}
+console.log(words(["a", "big", "elephant"]));//[ 'a', 'elephant' ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
