@@ -1,6 +1,7 @@
 // =============================== max min ========================
 
 //=================== MIN ==========
+//dont use Math.max() or Math.min!!!! solution without methods
 const min = arr => {
     let minimum = arr[0];
     for(let i = 0; i < arr.length; i++){
@@ -14,6 +15,7 @@ const min = arr => {
 console.log(min([1, 5, 3, 8])); // 1
 
 //======================= MAX ===========
+//dont use Math.max() or Math.min!!!! solution without methods
 const max = arr => {
     let minimum = arr[0];
     for(let i = 0; i < arr.length; i++){
@@ -26,6 +28,7 @@ const max = arr => {
 console.log(max([1, 5, 3, 8])) // 8
 
 //================== diff max- min in array ============
+//dont use Math.max() or Math.min!!!! solution without methods
 const diffInArray = arr => {
     let diff = [];
     for (let elem of arr){
@@ -38,7 +41,7 @@ console.log(diffInArray([[2, 5, 8, 1], [3, 6, 7], [4, 9, 2]]));//[7, 4, 7]
 
 //============== longest word ===========
 //we should return first longest word by alphabet
-
+//dont use Math.max() or Math.min!!!! solution without methods
 const longestWord = text => {
     let arr = text.toLowerCase().split(' ');
     let len = [];
@@ -56,7 +59,7 @@ const longestWord = text => {
 console.log(longestWord('hi my name is bnushi so what is your name my friend anushi '));// anushi
 
 //==================== replace first max and min ========================
-
+//dont use Math.max() or Math.min!!!! solution without methods
 const changeMaxAndMin = arr => {
     let min = arr[0];
     let max = arr[0];
@@ -78,7 +81,7 @@ const changeMaxAndMin = arr => {
 console.log(changeMaxAndMin([3, 4, 8, 4, 1, 2, 1]));// [3, 4, 1, 4, 8, 2, 1]
 
 //================== largest word in array ========================
-
+//dont use Math.max() or Math.min!!!! solution without methods
 const theLongestWord = arr => {
     let maxLength = arr[0].length,  maxWord = arr[0];
     for(let i = 1; i < arr.length; i++){
@@ -93,7 +96,7 @@ console.log(theLongestWord(["a", "big", "elephant"])); //'elephant'
 console.log(theLongestWord(["test"]));//'test'
 
 //============== shortest and largest word in array =====================
-
+//dont use Math.max() or Math.min!!!! solution without methods
 const words = arr => {
     let maxLength = arr[0].length;
     let minLength = arr[0].length;
@@ -113,7 +116,7 @@ const words = arr => {
 console.log(words(["a", "big", "elephant"]));//[ 'a', 'elephant' ]
 
 //=============================== max abs value ================
-
+//dont use Math.max() or Math.min!!!! solution without methods
 const maxAbsValue = arr => {
     let maxAbs = Math.abs(arr[0]);
     let maxWord = arr[0];
@@ -129,7 +132,7 @@ console.log(maxAbsValue([3, 7, -8, 1]));// -8
 console.log(maxAbsValue([-11, 6, 12]));//12
 
 //====================== max Even Number ===================
-
+//dont use Math.max() or Math.min!!!! solution without methods
 const maxEven = arr => {
    let even = [];
    for(let num of arr){
@@ -150,7 +153,7 @@ console.log(maxEven([29,18]));//18
 console.log(maxEven( [17,13,9,15,17]));//undefined
 
 //===================== min Odd number ===================
-
+//dont use Math.max() or Math.min!!!! solution without methods
 const minOdd = arr => {
     let odd = [];
     for(let num of arr){
@@ -172,7 +175,7 @@ console.log(minOdd([3, 3]));//3
 console.log(minOdd([2, 4]));//undefined
 
 //====================== most Expensive Car ==================
-
+//dont use Math.max() or Math.min!!!! solution without methods
 
 const mostExpensiveCar = arr => {
     let maxPrice = arr[0][1];
@@ -189,7 +192,7 @@ const mostExpensiveCar = arr => {
 console.log(mostExpensiveCar([["Honda", 18500], ["Toyota", 21200], ["BMW", 19900]]));//'Toyota'
 
 //============================ largest Number Of Mushrooms ==========================
-
+//dont use Math.max() or Math.min!!!! solution without methods
 const largestNumberOfMushrooms = arr => {
     let number = arr[0][1];
     let name = arr[0][0];
@@ -206,6 +209,7 @@ console.log(largestNumberOfMushrooms([["Maria", 15], ["Anna", 21], ["Ivan", 32]]
 
 //========================== the Coldest Day =============================
 //find first cold day
+//dont use Math.max() or Math.min!!!! solution without methods
 const theColdestDay = arr => {
     let min = arr[0];
     let minInd = 0;
@@ -221,7 +225,7 @@ const theColdestDay = arr => {
 console.log(theColdestDay([12, 10, 20, 23]));//"April 2 was the coldest day of the month: it was 10 degrees."
 
 //find last cold day
-
+//dont use Math.max() or Math.min!!!! solution without methods
 const theLastColdDay = arr => {
     let min = arr[arr.length -1];
     let minInd = arr.length;
@@ -235,9 +239,6 @@ const theLastColdDay = arr => {
     return `April ${minInd + 1} was the coldest day of the month: it was ${min} degrees.`;
 }
 console.log(theLastColdDay([15, 10, 20, 23, 10, 14, 13, 10]));//"April 9 was the coldest day of the month: it was 10 degrees."
-
-
-
 
 
 
