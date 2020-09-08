@@ -204,6 +204,37 @@ const largestNumberOfMushrooms = arr => {
 }
 console.log(largestNumberOfMushrooms([["Maria", 15], ["Anna", 21], ["Ivan", 32]]));//'Ivan: 32'
 
+//========================== the Coldest Day =============================
+//find first cold day
+const theColdestDay = arr => {
+    let min = arr[0];
+    let minInd = 0;
+    for(let i = 1; i < arr.length; i++){
+        if(arr[i] < min){
+            min = arr[i];
+            minInd = i;
+        }
+    }
+    return `April ${minInd + 1} was the coldest day of the month: it was ${min} degrees.`;
+
+}
+console.log(theColdestDay([12, 10, 20, 23]));//"April 2 was the coldest day of the month: it was 10 degrees."
+
+//find last cold day
+
+const theLastColdDay = arr => {
+    let min = arr[arr.length -1];
+    let minInd = arr.length;
+    for(let i  = arr.length - 1; i >= 0; i--){
+        if(arr[i] < min){
+            min = arr[i];
+            minInd = i;
+            console.log(arr.length )
+        }
+    }
+    return `April ${minInd + 1} was the coldest day of the month: it was ${min} degrees.`;
+}
+console.log(theLastColdDay([15, 10, 20, 23, 10, 14, 13, 10]));//"April 9 was the coldest day of the month: it was 10 degrees."
 
 
 
