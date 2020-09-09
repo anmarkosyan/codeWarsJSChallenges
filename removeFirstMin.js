@@ -5,15 +5,24 @@
 
 
 const removeFirstMin = arr => {
+    // let res = [];
+    // let min = arr[0];
+    // let minInd = 0;
+    // for(let i = 1; i < arr.length; i++){
+    //     if(arr[i] <  min){
+    //         min = arr[i];
+    //         minInd = i;
+    //     }
+    // }
+    // for(let i = 0; i < arr.length; i++){
+    //     if(i !== minInd){
+    //         res.push(arr[i]);
+    //     }
+    // }
+    // return res;
+    //2 way
     let res = [];
-    let min = arr[0];
-    let minInd = 0;
-    for(let i = 1; i < arr.length; i++){
-        if(arr[i] <  min){
-            min = arr[i];
-            minInd = i;
-        }
-    }
+    let minInd = arr.indexOf(Math.min(...arr));
     for(let i = 0; i < arr.length; i++){
         if(i !== minInd){
             res.push(arr[i]);
@@ -23,4 +32,5 @@ const removeFirstMin = arr => {
 
 }
 console.log(removeFirstMin([ 2, 3, 1, 4, 5]));//[2, 3, 4, 5];
+console.log(removeFirstMin([2, 1, 3, 4, 5, 1]))//[ 2, 3, 4, 5, 1 ]
 console.log(removeFirstMin([]));//[]
