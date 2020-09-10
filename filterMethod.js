@@ -1,4 +1,9 @@
-//
+//return each elements one time, without duplicates
+//delete duplicates
+
+let arr = [1, 2, 3, 1, 2, 3, 4, 1, 2, 3];//[1, 2, 3, 4]
+let res = arr.filter((el, i) => i === arr.indexOf(el));
+console.log(res);
 
 //==================== Find numbers which are divisible by given number===========
 //Complete the function which takes two arguments and returns all numbers which are
@@ -35,8 +40,47 @@ const well = x => {
 
 }
 console.log(well(['bad', 'bad', 'bad']));//'Fail!'
-console.log(well(['good', 'bad', 'bad', 'bad', 'bad']));//'Publish!'
+console.log(well(['good', 'bad', 'bad', 'good', 'bad']));//'Publish!'
 console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']));//'I smell a series!'
+
+//============================ Find the lucky numbers ===================
+//Write a function filterLucky/filter_lucky() that accepts a list of
+//integers and filters the list to only include the elements that contain the digit 7.
+
+const filterLucky = arr => {
+    return arr.filter(num => (num + '').includes('7'));
+
+}
+console.log(filterLucky([1,2,3,4,5,6,7,68,69,70,15,17]));//[7,70,17]
+console.log(filterLucky([71,9907,69]));//[71, 9907]
+
+
+//======================= Array diff =====================
+//Your goal in this kata is to implement a difference function, which subtracts one list
+//from another and returns the result.
+// It should remove all values from list a, which are present in list b.
+
+const diffArray = (a, b) => {
+    //1 way
+    // let arr = a.concat(b)//[1, 2, 3, 4, 2, 3]
+    // let arr1 = arr.filter((el) => arr.indexOf(el) === arr.lastIndexOf(el));
+    // return arr1;
+    //2 way
+    return a.filter(el => !b.includes(el));
+
+}
+console.log(diffArray([1, 2, 3, 4], [2, 3]));//[1, 4]
+
+
+
+
+
+
+
+
+
+
+
 
 
 
