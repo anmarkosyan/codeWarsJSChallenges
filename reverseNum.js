@@ -65,3 +65,14 @@ const reverse2 = n => {
 }
 console.log(reverse2(5));//[5, 4, 3, 2, 1]
 
+//=============== reverse task without created new Array ===============
+
+const arr = [1, 2, 3, 4, 5, 6];//[6, 5, 4, 3, 2, 1]
+for(let i = 0; i < arr.length / 2; i++){
+    let temp = arr[i];
+    arr[i] = arr[arr.length -1 - i];
+    arr[arr.length -1 -i] = temp;
+}
+console.log(arr)
+
+
