@@ -9,6 +9,6 @@ const purchaseValue = values =>{
     for(let elem of values){
         sum += parseFloat(elem)
     }
-    return sum;
+    return sum.toFixed(2);
 }
 console.log(purchaseValue(['1.31 bread', '7.96 cabbage', '2.10 candies', '0.84 salad']));// 12.21
