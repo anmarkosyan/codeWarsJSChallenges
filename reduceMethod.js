@@ -36,9 +36,19 @@ console.log(sqrt);//55
 //==================== diff of square sum and cube sum =======
 //true if sqrt > cube
 function arrayMadness(a, b) {
-    let sqrt = a.reduce((sum, item) => sum + item * item, 0);
-    let cube = b.reduce((sum, item) => sum + item * item * item, 0);
-    return sqrt > cube;
+    // let sqrt = a.reduce((sum, item) => sum + item * item, 0);
+    // let cube = b.reduce((sum, item) => sum + item * item * item, 0);
+    // return sqrt > cube;
+
+    //or simply
+    return a.reduce((sum, item) => sum + item * item, 0) > b.reduce((sum, item) => sum + item * item * item, 0)
 }
 console.log(arrayMadness([4,5,6],[1,2,3]));//true
 console.log(arrayMadness([5,6,7],[4,5,6]));//false
+
+//================== array plus array ==============
+function arrayPlusArray(arr1, arr2) {
+   // return arr1.reduce((sum, item) => sum + item, 0) + arr2.reduce((sum, item) => sum + item, 0);
+      return arr1.concat(arr2).reduce((sum, item) => sum + item, 0);
+}
+console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]));//21
