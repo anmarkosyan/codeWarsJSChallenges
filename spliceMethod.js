@@ -31,6 +31,15 @@ let removed4 = arr4.splice(-2);
 console.log(removed4);//[ 'minute', 'second' ]
 console.log(arr4);//[ 'year', 'day', 'week' ]
 
+//================ delete elements below n =============
+let arr5 = [0, 1, 2, 3, 5, 8, 13];
+let n = 3;
+//1 way
+//console.log(arr5.splice(0, n));//[ 0, 1, 2 ]
+//2 way
+arr5.splice(n);
+console.log(arr5);//[ 0, 1, 2 ]
+
 
 
 
