@@ -14,7 +14,7 @@ console.log(str1); // 'e + l + b + a + t'
 
 let str2 = '';
 for(let i = 0; i < word.length; i++){
-    str2 = word[i] + str;
+    str2 = word[i] + str2;
 
 }
 console.log(str2);//'e+l+b+a+t'
@@ -27,14 +27,15 @@ for(let letter of word){
 }
 console.log(str3);
 
+
+//====================  reverse words in array =========
+
 let words = ['noon', 'sun', 'table', 'door', 'happy'];
 for(let i = 0; i < words.length; i++){
     let s = '';
-   for(let str of words[i]) {
-       s += s[i][str];
+   for(let j = 0; j < words[i].length; j++) {
+       s = words[i][j] + s;
    }
    words[i] = s;
 }
-
-
 console.log(words);//['noon', 'nus', 'elbat', 'rood', 'yppah']
