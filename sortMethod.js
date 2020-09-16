@@ -1,7 +1,7 @@
 //========== Two Oldest Ages ====================
 
 function twoOldestAges(ages){
-    ages.sort((a, b) => b -a);
+    ages.sort((a, b) => b - a); //if b - a > 0 a <--> b
     return [ages[1], ages[0]]
 
 }
@@ -67,6 +67,34 @@ function sortByLength (array) {
     return array.sort((a, b) => a.length - b.length);
 }
 console.log(sortByLength(["Beg", "Life", "I", "To"]));//[ 'I', 'To', 'Beg', 'Life' ]
+
+//============== other tasks ========================================
+
+const words = ["Beg", "Life", "Home", "To"];
+
+//=================== sort words by alphabet =========
+let sort = words.sort();
+console.log(sort);//[ 'Beg', 'Home', 'Life', 'To' ]
+
+//============== reverse sorted ========
+let revSort = words.sort().reverse()
+console.log(revSort);//[ 'To', 'Life', 'Home', 'Beg' ]
+
+//============= sort by each word last letter ===
+function lastSort(a, b){
+    if(a[a.length -1] > b[b.length -1]) return 1;
+    else if(a[a.length - 1] < b[b.length - 1]) return -1;
+    else return 0;
+
+}
+let last = words.sort(lastSort);
+console.log(last);//[ 'Life', 'Home', 'Beg', 'To' ]
+
+
+
+
+
+
 
 
 
