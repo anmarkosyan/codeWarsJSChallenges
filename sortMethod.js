@@ -90,7 +90,17 @@ function lastSort(a, b){
 let last = words.sort(lastSort);
 console.log(last);//[ 'Life', 'Home', 'Beg', 'To' ]
 
+//============= with nested array sort by age ==============
+let arr = [['Alice', 28], ['Bob', 20], ['Aaron', 24]];
+let nestedSort = arr.sort((a, b) => a[1] - b[1]);
+console.log(nestedSort);//[ [ 'Bob', 20 ], [ 'Aaron', 24 ], [ 'Alice', 28 ]
 
+
+//===================== sort by age using object array =======
+let obj = [{name:"Bob", age:25}, {name:"Sam", age:19}, {name:"Alla", age:24}];
+let objSort = obj.sort((a, b) => a.age - b.age);
+console.log(objSort);//[{ name: 'Sam', age: 19 }, { name: 'Alla', age: 24 },  { name: 'Bob', age: 25 }]
+console.log(objSort[0].age);//19
 
 
 
