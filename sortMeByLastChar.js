@@ -1,7 +1,7 @@
 //
 //Sort array by last character
 // Complete the function to sort a given array or list by last character of elements.
-// Element can be an integer or a string.
+//elements are only string
 
 
 const sortMeByLastChar = arr => {
