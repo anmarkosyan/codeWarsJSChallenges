@@ -70,6 +70,25 @@ console.log(doubleChar("Adidas"));//"AAddiiddaass"
 console.log(doubleChar('123'));//'112233'
 
 
+//==================Unique In Order =================
+//Implement the function unique_in_order which takes as argument a sequence
+//and returns a list of items without any elements with the same value next to each other
+//and preserving the original order of elements.
+
+const uniqueInOrder=function(str){
+    // let arr = [];
+    // for(let i = 0; i < str.length; i++){
+    //     if(str[i] !== str[i + 1]){
+    //         arr.push(str[i])
+    //     }
+    // }
+    // return arr;
+    return [...str].filter((a, i) => a !== str[i + 1])
+
+}
+console.log(uniqueInOrder('AAAABBBCCDAABBB'));//[ 'A', 'B', 'C', 'D', 'A', 'B' ]
+
+
 
 
 
