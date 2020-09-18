@@ -39,3 +39,9 @@ for(let i = 0; i < words.length; i++){
    words[i] = s;
 }
 console.log(words);//['noon', 'nus', 'elbat', 'rood', 'yppah']
+
+//============= reverse string with methods ========
+//!!!!!!!!!!!!!!!!but this method not so effective BIG O(n^2)
+let str = 'hello world'
+console.log(str.split('').reverse().join(''));//dlrow olleh
+
