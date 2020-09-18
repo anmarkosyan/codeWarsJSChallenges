@@ -67,3 +67,18 @@ function drawTriangle2 (n){
     return str;
 }
 console.log(drawTriangle2(5));
+
+//================== Number-Star ladder =========
+//1
+//1*2
+//1**3
+
+function pattern(n){
+    let str = '1';
+    for(let i = 2; i <= n; i++){
+        str += '\n' + 1 + '*'.repeat(i - 1) + i;
+    }
+    return str;
+}
+console.log(pattern(3));
+console.log(pattern(10));
