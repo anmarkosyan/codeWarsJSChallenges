@@ -90,6 +90,14 @@ console.log(uniqueInOrder('AAAABBBCCDAABBB'));//[ 'A', 'B', 'C', 'D', 'A', 'B' ]
 
 
 
+//============== Valid brackets ================
+const valid = str => {
+    if(str.length % 2 !== 0) return false;
+    return str[0] === ')' || str[str.length -1] === '(' ? false : true;
+}
+console.log(valid(')('));//false
+console.log(valid(')()()()))'));//false
+
 
 
 
