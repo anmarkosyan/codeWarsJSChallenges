@@ -138,6 +138,16 @@ console.log(hello('alice'));//Hello, Alice!
 console.log(hello(''));//Hello, World!
 
 
+//=============== Find the capitals position ===========
+const capitals = function (word) {
+    let arrUpper = [];
+    for(let i = 0; i < word.length; i++){
+        if(word[i] === word[i].toUpperCase()) arrUpper.push(i)
+    }
+    return arrUpper;
+};
+console.log(capitals('CodEWaRs'));//[ 0, 3, 4, 6 ]
+
 
 
 
