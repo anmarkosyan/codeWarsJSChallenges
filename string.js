@@ -99,7 +99,36 @@ console.log(valid(')('));//false
 console.log(valid(')()()()))'));//false
 
 
+//============= X and O ==========
+//https://www.codewars.com/kata/55908aad6620c066bc00002a/train/javascript
 
+//Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive.
+// The string can contain any char.
+
+const  XO = str => {
+    // #1
+    // str = str.toLowerCase();
+    // let countX = 0;
+    // let countO = 0;
+    // for(let el of str){
+    //     if(el === 'x'){
+    //         countX ++;
+    //     }else if(el === 'o'){
+    //         countO ++;
+    //     }
+    // }
+    // return countX === countO;
+
+    //#2
+    str = str.toLowerCase().split('');
+    return str.filter(el => el === 'x').length === str.filter(el => el === 'o').length
+}
+console.log(XO("xxOo"));//true
+console.log(XO("xxOoxx"));//false
+console.log(XO("XxOoabc"));//true
+
+//===================== Hello, Name or World! =====================
+//
 
 
 
