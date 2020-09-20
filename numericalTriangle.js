@@ -82,3 +82,18 @@ function pattern(n){
 }
 console.log(pattern(3));
 console.log(pattern(10));
+
+//====================
+// a
+// aa
+// aaa
+// aaaa
+// aaaaa
+
+
+function fiveLine(s){
+    s = s.trim();
+    return `${s}\n${s.repeat(2)}\n${s.repeat(3)}\n${s.repeat(4)}\n${s.repeat(5)}`
+
+}
+console.log(fiveLine("  a"));//"a\naa\naaa\naaaa\naaaaa"
