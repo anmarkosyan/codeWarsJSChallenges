@@ -162,7 +162,7 @@ const accum = str => {
     //2 way
     return str.split('').map((el,i) => el.toUpperCase() + el.toLowerCase().repeat(i)).join('-')
 }
-console.log(accum('abcd'));//
+console.log(accum('abcd'));//A-Bb-Ccc-Dddd
 
 
 
