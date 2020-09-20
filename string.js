@@ -148,7 +148,21 @@ const capitals = function (word) {
 };
 console.log(capitals('CodEWaRs'));//[ 0, 3, 4, 6 ]
 
+//================== Mumbling =========================
 
+const accum = str => {
+    //1 way
+    // let arr = str.split('');
+    // let newArr = [];
+    // for(let i = 0; i < arr.length; i++){
+    //     newArr.push(arr[i].repeat(i + 1))
+    //
+    // }
+    // return newArr.map(el => el[0].toUpperCase() + el.slice(1).toLowerCase()).join('-')
+    //2 way
+    return str.split('').map((el,i) => el.toUpperCase() + el.toLowerCase().repeat(i)).join('-')
+}
+console.log(accum('abcd'));//
 
 
 
