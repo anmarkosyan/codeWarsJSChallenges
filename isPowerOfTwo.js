@@ -11,11 +11,13 @@ function isPowerOfTwo(n){
 
     }
     return n === 1 ;
+
+    //return Math.log2(n) % 1 === 0
 }
 
 console.log(isPowerOfTwo(5))// false
 console.log(isPowerOfTwo(16))// true
-console.log(isPowerOfTwo(2096))// true
+console.log(isPowerOfTwo(2096))// false
 
 
 
