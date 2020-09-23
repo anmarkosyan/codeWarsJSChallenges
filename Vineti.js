@@ -79,26 +79,98 @@
 //=============Given an array of 0's and 1's, how would you move all of the 0's to
 // the beginning of the array and all of the 1's to the end of the array? *
 
-const selectionSort = arr => {
-    //return arr.sort((a, b) => a - b);
-    for(let i = 0; i < arr.length; i ++){
-        let lowest = i;
-        for(let j = i + 1; j < arr.length; j++){
-            if(arr[j] < arr[lowest]) {
-                lowest = j;
+// const selectionSort = arr => {
+//     //return arr.sort((a, b) => a - b);
+//     for(let i = 0; i < arr.length; i ++){
+//         let lowest = i;
+//         for(let j = i + 1; j < arr.length; j++){
+//             if(arr[j] < arr[lowest]) {
+//                 lowest = j;
+//             }
+//         }
+//         if(i !== lowest){
+//             let swap = arr[i];
+//             arr[i] = arr[lowest];
+//             arr[lowest] = swap;
+//         }
+//     }
+//     return arr;
+// }
+// console.log(selectionSort([0, 1, 0, 1, 1, 0, 0, 1]));//[0, 0, 0, 0, 1, 1, 1, 1]
+
+//========Given 9 balls all of which weigh the same except for one, what is the minimum of weightings necessary to find the ball weighs more (or less)*
+//For find the diff min weight ball ,we divide 9 for three parts, and take 2 part for checking-  3 and 3 (lets say a and b), and measure them.  if(a === b) weight is equal,
+//we add 1 ball from 3rd part in a part , and 1 in b part, and check, if(a === b) its say that the 3 rd ball from 3 rd part has diff weight. else if(a > b) so the second
+//ball from 3rd part  lighter, and the same we do from the beginning with a and b, if(a < b )a balls within a is lighter, now we check each ball in a part.
+
+
+// const balls = arr => {
+//     let diff =  arr.find(el => arr.indexOf(el) === arr.lastIndexOf(el));
+//     for(let el of arr){
+//         if(diff > el) return 'ball is heavier'
+//     }
+//     return  'ball is lighter'
+// }
+// console.log(balls([12, 12, 12, 12, 23, 12, 12, 12, 12]))
+
+//===========  How would you find the longest palindrome in a string?
+
+
+//we create helper function that check if given word is palindrome or not
+function isPalindrome(str) {
+    //s =  s.replace(/\s/g,"");//to remove spaces
+    let rev = '';
+    for(let el of str){
+        rev = el + rev;
+    }
+    return  rev === str;
+}
+//main function
+function longestSubstrPalindrome(str) {
+    let maxlength = 0;
+    let maxStr = '';
+    for (let i = 0; i < str.length; i++) {
+        let subStr = str.slice(i, str.length);
+        if (subStr.length <= maxlength) break;//Stop Loop for smaller strings
+
+        for (let j = subStr.length; j >= 0; j--) {
+
+            let sub_subStr = subStr.slice(0, j);
+            if (sub_subStr.length <= maxlength) break; // Stop loop for smaller strings
+            if (isPalindrome(sub_subStr)) {
+                maxlength= sub_subStr.length;
+                maxStr = sub_subStr;
             }
         }
-        if(i !== lowest){
-            let swap = arr[i];
-            arr[i] = arr[lowest];
-            arr[lowest] = swap;
-
-        }
-
     }
-    return arr;
-
+    return maxStr;
 
 }
-console.log(selectionSort([0, 1, 0, 1, 1, 0, 0, 1]));//[0, 0, 0, 0, 1, 1, 1, 1]
+console.log(longestSubstrPalindrome('ababa'));//'ababa'
+console.log(longestSubstrPalindrome('hello'));//'ll'
+console.log(longestSubstrPalindrome('banana'));//'anana'
+//console.log(expand('ababa', 0, 3));//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
