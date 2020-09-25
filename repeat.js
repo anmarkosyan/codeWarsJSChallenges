@@ -44,7 +44,7 @@ console.log(billboard('Anush Markosyan'));//450
 console.log(billboard('"Hadufuns John",20'));// 540
 
 //============= Jumping Dutch act ============
-//
+//https://www.codewars.com/kata/570bcd9715944a2c8e000009/train/javascript
 //Mr. despair wants to jump off Dutch act, So he came to the top of a building.
 // Scientific research shows that a man jumped from the top of the roof,
 // when the floor more than 6, the person will often die in an instant;
@@ -69,3 +69,45 @@ console.log(sc(2));//"Aa~ Pa! Aa!"
 console.log(sc(6));//"Aa~ Aa~ Aa~ Aa~ Aa~ Pa! Aa!"
 console.log(sc(7));//"Aa~ Aa~ Aa~ Aa~ Aa~ Aa~ Pa!"
 console.log(sc(''));//''
+
+
+//================ Stringy Strings ==============
+//https://www.codewars.com/kata/563b74ddd19a3ad462000054/train/javascript
+//write me a function stringy that takes a size and returns a string of
+// alternating '1s' and '0s'.
+function stringy(size) {
+    let str = '';
+    for(let i = 0; i < size; i++){
+        if(i % 2 === 0){
+            str += '1';
+        }
+        else str+='0'
+    }
+
+    return  str;
+
+    //#2
+    //return ''.padStart(size, '10')
+
+}
+console.log(stringy(3 ));// '101'
+
+//===========repeatIt ==========
+//
+//The function should return a string that repeats the input string n number of times.
+// If anything other than a string is passed in you should return "Not a string"
+
+const repeatIt = function(str, n){
+//     if(typeof str !== 'string') return "Not a string"
+//     let newStr = '';
+//     let i = 0;
+//     while (i < n){
+//         newStr += str;
+//         i++;
+//     }
+// return newStr ;
+    return typeof str === 'string' ? str.repeat(n) : "Not a string";
+
+}
+console.log(repeatIt('Hello',4));//'HelloHelloHelloHello'
+console.log(repeatIt(12345));//
