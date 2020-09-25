@@ -117,39 +117,87 @@
 
 
 //we create helper function that check if given word is palindrome or not
-function isPalindrome(str) {
-    //s =  s.replace(/\s/g,"");//to remove spaces
-    let rev = '';
-    for(let el of str){
-        rev = el + rev;
-    }
-    return  rev === str;
-}
-//main function
-function longestSubstrPalindrome(str) {
-    let maxlength = 0;
-    let maxStr = '';
-    for (let i = 0; i < str.length; i++) {
-        let subStr = str.slice(i, str.length);
-        if (subStr.length <= maxlength) break;//Stop Loop for smaller strings
+// function isPalindrome(str) {
+//     //s =  s.replace(/\s/g,"");//to remove spaces
+//     let rev = '';
+//     for(let el of str){
+//         rev = el + rev;
+//     }
+//     return  rev === str;
+// }
+// //main function
+// function longestSubstrPalindrome(str) {
+//     let maxlength = 0;
+//     let maxStr = '';
+//     for (let i = 0; i < str.length; i++) {
+//         let subStr = str.slice(i, str.length);
+//         if (subStr.length <= maxlength) break;//Stop Loop for smaller strings
+//
+//         for (let j = subStr.length; j >= 0; j--) {
+//
+//             let sub_subStr = subStr.slice(0, j);
+//             if (sub_subStr.length <= maxlength) break; // Stop loop for smaller strings
+//             if (isPalindrome(sub_subStr)) {
+//                 maxlength= sub_subStr.length;
+//                 maxStr = sub_subStr;
+//             }
+//         }
+//     }
+//     return maxStr;
+//
+// }
+// console.log(longestSubstrPalindrome('ababa'));//'ababa'
+// console.log(longestSubstrPalindrome('hello'));//'ll'
+// console.log(longestSubstrPalindrome('banana'));//'anana'
+// //console.log(expand('ababa', 0, 3));//
 
-        for (let j = subStr.length; j >= 0; j--) {
 
-            let sub_subStr = subStr.slice(0, j);
-            if (sub_subStr.length <= maxlength) break; // Stop loop for smaller strings
-            if (isPalindrome(sub_subStr)) {
-                maxlength= sub_subStr.length;
-                maxStr = sub_subStr;
-            }
-        }
-    }
-    return maxStr;
+//============How would you solve the N Queens problem
+//The n-queens puzzle is the problem of placing n queens on
+// an n×n chessboard such that no two queens attack each other.
+//Given an integer n, return all distinct solutions to the n-queens puzzle.
+//Each solution contains a distinct board configuration of the n-queens' placement,
+//where 'Q' and '.' both indicate a queen and an empty space respectively.
+//Input: 4
+// Output: [
+//  [".Q..",  // Solution 1
+//   "...Q",
+//   "Q...",
+//   "..Q."],
+//
+//  ["..Q.",  // Solution 2
+//   "Q...",
+//   "...Q",
+//   ".Q.."]
+// ]
+//Explanation: There exist two distinct solutions to the 4-queens puzzle as shown above.
 
-}
-console.log(longestSubstrPalindrome('ababa'));//'ababa'
-console.log(longestSubstrPalindrome('hello'));//'ll'
-console.log(longestSubstrPalindrome('banana'));//'anana'
-//console.log(expand('ababa', 0, 3));//
+const solveNQueens = n =>{
+    let  board = Array(n).fill(0).map( _ => Array(n).fill(0));
+    return board;
+
+};
+console.log(solveNQueens(4));//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
