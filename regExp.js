@@ -22,7 +22,7 @@ console.log(solve("code"));//'code'
 console.log(solve("CODe"));//CODE
 console.log(solve('COde'));//code
 
-//============== validate code with simple regex ==========
+//============== check start point : simple regex ==========
 //https://www.codewars.com/kata/56a25ba95df27b7743000016/train/javascript
 //Basic regex tasks. Write a function that takes in a numeric code of any length.
 //The function should check if the code begins with 1, 2, or 3 and return true if so.
@@ -39,7 +39,22 @@ function validateCode (code) {
 console.log(validateCode(123));//true
 console.log(validateCode(345667));//true
 console.log(validateCode(67834));//false
-consoel.log(validateCode(23411));//true
+console.log(validateCode(23411));//true
+
+//================ check end point ============
+
+function correctTail(bod, tail ){
+    return bod.endsWith(tail)
+}
+console.log(correctTail('Fox','x'));//true
+console.log(correctTail("Rhino", "o"));//true
+
+//================ String ends with? ===================
+function solution(str, ending){
+    return str.endsWith(ending);
+}
+console.log(solution('abcd','bcd'));//true
+console.log(solution('abcde','ab'));//false
 
 
 
