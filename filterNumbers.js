@@ -5,12 +5,15 @@
 
 
 function filterNumbers(str) {
-    let num = '';
-    for (let char of str) {
-        if (!isNaN(char)) {
-            num += char;
-        }
-    }
-    return +num;
+    // let num = '';
+    // for (let char of str) {
+    //     if (!isNaN(char)) {
+    //         num += char;
+    //     }
+    // }
+    // return +num;
+    //#2
+    let match = str.match(/\d/g).join('');
+    return parseInt(match);
 }
 console.log(filterNumbers('1asd34gh7xex2'));// 13472
