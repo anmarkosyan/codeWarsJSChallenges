@@ -56,6 +56,24 @@ function solution(str, ending){
 console.log(solution('abcd','bcd'));//true
 console.log(solution('abcde','ab'));//false
 
+//============== filter numbers =============
+//Your task is to return a number from a string.
+
+const FilterString = function(value) {
+    //#1 its has a slow run time
+    // let regExp = value.match(/\d/g).join('');
+    // return parseInt(regExp);
+    //2 faster
+    return parseInt(value.replace(/\D/g,''))
+
+}
+console.log(FilterString("a1b2c3"));//123
+console.log(FilterString("aa1bb2cc3dd"));//123
+console.log(FilterString("aa15bb27cc3dd"))//15273
+
+
+
+
 
 
 
