@@ -72,7 +72,17 @@ console.log(FilterString("aa1bb2cc3dd"));//123
 console.log(FilterString("aa15bb27cc3dd"))//15273
 
 
+//====================Remove String Spaces========
+//https://www.codewars.com/kata/57eae20f5500ad98e50002c5/train/javascript
 
+function noSpace(x){
+    //#1 slow time
+    //return x.split(' ').join('');
+    //#2 faster
+    return x.replace(/\s/g, '');
+
+}
+console.log(noSpace('8 j 8   mBliB8g  imjB8B8  jl  B'));//8j8mBliB8gimjB8B8jlB
 
 
 
