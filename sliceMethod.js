@@ -53,3 +53,35 @@ function tailSwap(arr) {
 console.log(tailSwap(['abc:123', 'cde:456']));//['abc:456', 'cde:123']
 console.log(tailSwap(['a:12345', '777:xyz']));//['a:xyz', '777:12345']
 
+//============================= Credit Card Mask ==================
+//
+//Usually when you buy something, you're asked whether your credit card number,
+// phone number or answer to your most secret question is still correct.
+// However, since someone could look over your shoulder,
+// you don't want that shown on your screen. Instead, we mask it.
+// Your task is to write a function maskify, which changes all but the last four characters into '#'
+
+function cardMask(cc) {
+    //return  (cc.length < 5) ? cc : cc.slice(0, -4).replace(/[0-9]/g,'#') + cc.slice(-4);
+    //#2
+    return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4);
+}
+console.log(cardMask('4556364607935616'));//'############5616'
+console.log(cardMask('1'));//'1'
+console.log(cardMask('11111'));//#1111
+
+//======================= Create Phone Number ======================
+//
+//Write a function that accepts an array of 10 integers (between 0 and 9),
+//that returns a string of those numbers in the form of a phone number.
+//createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
+
+function createPhoneNumber(numbers){
+    numbers = numbers.join('')
+    let match = numbers.match(/^(\d{3})?(\d{3})?(\d{4})/)
+    return `(${match[1]}) ${match[2]}-${match[3]}`
+
+}
+console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));//"(123) 456-7890";
+console.log(createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]));//"(111) 111-1111"
+
