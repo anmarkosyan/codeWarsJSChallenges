@@ -167,7 +167,14 @@ console.log(vowelStart('my number is 0208-533-2325'));//'myn umb er is0208533232
 console.log(vowelStart('under_score'));//'und ersc or e'
 
 
+//=================== name swapper =========================
+//https://www.codewars.com/kata/559ac78160f0be07c200005a/train/javascript
 
+function nameShuffler(str){
+    //return str.replace(/(\w+)\s(\w+)/, '$2 $1');
+    return str.replace(/([^\s]+) ([^\s]+)/, '$2 $1')
+}
+console.log(nameShuffler('Anush Markos'));//'Markos Anush'
 
 
 
