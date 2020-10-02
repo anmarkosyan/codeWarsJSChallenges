@@ -13,6 +13,11 @@ console.log(str.split());
 //[ '1I do, 2you do, 3they do' ]
 console.log(str.split(/\d/))
 //[ '', 'I do, ', 'you do, ', 'they do' ], numbers like separator
+console.log(str.split(/\W+/g));// the same as str.split(' ');
+//[ '1I', 'do', '2you', 'do', '3they', 'do' ]
+
+
+
 let str1 = '12 3 4 5'
 console.log(str1.split(/\s*/));
 //[ '1', '2', '3', '4', '5' ]
@@ -21,6 +26,7 @@ console.log(str.split(/\s*/));
 // '2', 'y', 'o', 'u', 'd',
 // 'o', ',', '3', 't', 'h',
 // 'e', 'y', 'd', 'o']
+
 
 
 
