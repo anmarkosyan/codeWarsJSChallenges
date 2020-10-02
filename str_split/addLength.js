@@ -6,7 +6,7 @@
 
 
 const addLength = str => {
-    //#1 using loops time: 2 step
+    //#1 using loops and counter time: 2 step
     // let arr = str.split(' ');
     // let newArr = [];
     // for(let i = 0; i < arr.length; i++){
@@ -20,7 +20,15 @@ const addLength = str => {
     // }
     // return newArr;
 
-    //#2 using methods
+    //#2
+    // let arr = str.split(' ')
+    // let newArr = [];
+    // for(let el of arr){
+    //     newArr.push(el + ' ' + el.length);
+    // }
+    // return newArr;
+
+    //#3 using methods
     return str.split(' ').map(el => el +' ' + el.length);
 
 
