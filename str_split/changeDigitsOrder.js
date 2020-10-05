@@ -9,17 +9,19 @@
 
 const changeDigitsOrder = num => {
     let arr = (num+'').split('').map(el => +el).sort((a, b) => a - b);
+    let first = 0;
+    let indFirst = 0;
 
     for(let i = 0; i < arr.length; i++){
-        if(arr[i] === 0 && arr[i] < arr[i+1]){
-            let temp = arr[i];
-            arr[i] = arr[i+1];
-            arr[i+1] = temp;
+        if(arr[i] > 0){
+           first = arr[i];
+           indFirst = i;
             break;
         }
     }
 
-    return arr
+    let res = first + arr.slice(0,indFirst) + arr.slice(indFirst+1)
+    return parseInt(res.replace(/,/g, ''))
 }
 console.log(changeDigitsOrder(1513));//1135
 console.log(changeDigitsOrder(1500));//1005
