@@ -25,5 +25,11 @@ const rooms = {
 
     }
 }
+//if we want see each key
+for(let key in rooms){
+   console.log(key)
+}
+
+
 console.log(rooms)
 
