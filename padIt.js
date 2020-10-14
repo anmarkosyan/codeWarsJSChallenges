@@ -8,16 +8,23 @@
 // the first time will add a * to the left side of str, the second time will add a * to the right side, and so on.
 
 function padIt(str,n){
-    let i = 0;
-    while(i < n){
-        if(i % 2===0){
-            str = `*${str}`
-        }else {
-            str = `${str}*`
-        }
-        i++;
-    }
-    return str;
+    // let i = 0;
+    // while(i < n){
+    //     if(i % 2===0){
+    //         str = `*${str}`
+    //     }else {
+    //         str = `${str}*`
+    //     }
+    //     i++;
+    // }
+    // return str;
+    //#2 loop do ... while
+    let res = str
+    do {
+       res =  (n % 2 === 0) ? res + "*" : "*" + res;
+        n--;
+    } while (n);
+    return res;
 
 }
 console.log(padIt("a",1));//"*a"
