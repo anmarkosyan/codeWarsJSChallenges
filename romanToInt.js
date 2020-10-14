@@ -27,26 +27,38 @@ Given a roman numeral, convert it to an integer.
 const romanToInt = function(s) {
     let map = {I: 1,  V: 5,  X: 10,  L: 50,  C: 100,  D: 500,  M: 1000};
     let sum = 0;
-    let curr;
-    let currVal;
-    let next;
-    let nextVal;
-    for(let i = 0; i < s.length; i++) {
-        curr = s[i];
-        currVal = map[curr];
+    //#1 solution
+    // let curr;
+    // let currVal;
+    // let next;
+    // let nextVal;
+    // for(let i = 0; i < s.length; i++) {
+    //     curr = s[i];
+    //     currVal = map[curr];
+    //
+    //     next = s[i + 1];
+    //     nextVal = map[next]
+    //
+    //     if(currVal >= nextVal) {
+    //         sum += currVal;
+    //     }else if(currVal < nextVal){
+    //         sum -= currVal
+    //     }else if(currVal && !nextVal){
+    //         sum += currVal
+    //     }
+    // }
+    // return  sum
 
-        next = s[i + 1];
-        nextVal = map[next]
+    //#2 solution more fast solution
 
-        if(currVal >= nextVal) {
-            sum += currVal;
-        }else if(currVal < nextVal){
-            sum -= currVal
-        }else if(currVal && !nextVal){
-            sum += currVal
-        }
+    for(let i = 0; i < s.length; i++){
+        if(map[s[i]] < map[s[i + 1]]){
+            sum -= map[s[i]]
+
+        }else sum += map[s[i]]
+
     }
-    return  sum
+    return sum
 
 };
 console.log(romanToInt('III'));//3
