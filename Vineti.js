@@ -1,4 +1,5 @@
-//You have a list of numbers from one to one million and there is a missing number. How would you find the missing number?
+//You have a list of numbers from one to one million and there is a missing number.
+// How would you find the missing number?
 
 // const missNum = arr => {
 //     for(let i = 0; i < arr.length - 1; i++){

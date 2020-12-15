@@ -6,12 +6,10 @@ What should we return when needle is an empty string? This is a great question t
 For the purpose of this problem, we will return 0 when needle is an empty string. This is consistent to C's strstr() and Java's indexOf().
  */
 
-
 const strStr = (haystack, needle) => {
-    return haystack.indexOf(needle);
-
-}
-console.log(strStr('hello','ll'));// 2
-console.log(strStr('hhhhh','lhhhh'));// -1
-console.log(strStr('gggd',''));// 0
-console.log(strStr('hh','hhhhhhhhh'));//0
+  return haystack.indexOf(needle);
+};
+console.log(strStr("hello", "ll")); // 2
+console.log(strStr("hhhhh", "lhhhh")); // -1
+console.log(strStr("gggd", "")); // 0
+console.log(strStr("hh", "hhhhhhhhh")); //0
