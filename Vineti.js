@@ -1,15 +1,33 @@
 //You have a list of numbers from one to one million and there is a missing number.
 // How would you find the missing number?
 
-// const missNum = arr => {
-//     for(let i = 0; i < arr.length - 1; i++){
-//         if(arr[i] + 1 !== arr[i + 1]){
-//             return arr[i] + 1;
-//         }
-//     }
-//     return null;
-// }
-// //console.log(missNum([1, 2, 3, 4, 5, 6, 7,8, 9, 10, 11, 13]));
+const missNum = (arr) => {
+  //1 way for ordered array
+  // for(let i = 0; i < arr.length - 1; i++){
+  //     if(arr[i] + 1 !== arr[i + 1]){
+  //         return arr[i] + 1;
+  //     }
+  // }
+  // return null;
+
+  //2 way for both cases
+  const minNum = Math.min(...arr);
+  const maxNum = Math.max(...arr);
+  let sum1 = 0;
+  let sum2 = 0;
+  //find sum of all numbers in the array
+  //const sum1 = arr.reduce((acc, n) => n + acc, 0);
+  for (const n of arr) {
+    sum1 += n;
+  }
+  //find sum of all numbers between min and max
+  for (let i = minNum; i <= maxNum; i++) {
+    sum2 += i;
+  }
+  return sum2 - sum1;
+};
+console.log(missNum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13])); //12
+console.log(missNum([3, 1, 2, 5, 4, 7, 8, 9])); //6
 //
 // //===================How would you determine if a number is a power of two? *
 //
@@ -48,7 +66,7 @@
 // //console.log(reverse('abrakatabra'));//'arbatakarba'
 
 //===========How would you compress a string such that 'AAABCCDDDD' becomes 'A3BC2D4'?
-// Only compress the string if it saves space. *
+//Only compress the string if it saves space. *
 
 // const compressStr = str => {
 //     let newStr = '';
@@ -75,7 +93,6 @@
 
 //}
 //console.log(compressStr('AAABCCDDDD'));//A3BC2D4
-
 
 //=============Given an array of 0's and 1's, how would you move all of the 0's to
 // the beginning of the array and all of the 1's to the end of the array? *
@@ -104,7 +121,6 @@
 //we add 1 ball from 3rd part in a part , and 1 in b part, and check, if(a === b) its say that the 3 rd ball from 3 rd part has diff weight. else if(a > b) so the second
 //ball from 3rd part  lighter, and the same we do from the beginning with a and b, if(a < b )a balls within a is lighter, now we check each ball in a part.
 
-
 // const balls = arr => {
 //     let diff =  arr.find(el => arr.indexOf(el) === arr.lastIndexOf(el));
 //     for(let el of arr){
@@ -115,7 +131,6 @@
 // console.log(balls([12, 12, 12, 12, 23, 12, 12, 12, 12]))
 
 //===========  How would you find the longest palindrome in a string?
-
 
 //we create helper function that check if given word is palindrome or not
 // function isPalindrome(str) {
@@ -152,7 +167,6 @@
 // console.log(longestSubstrPalindrome('banana'));//'anana'
 // //console.log(expand('ababa', 0, 3));//
 
-
 //============How would you solve the N Queens problem
 //The n-queens puzzle is the problem of placing n queens on
 // an n×n chessboard such that no two queens attack each other.
@@ -173,53 +187,10 @@
 // ]
 //Explanation: There exist two distinct solutions to the 4-queens puzzle as shown above.
 
-const solveNQueens = n =>{
-    let  board = Array(n).fill(0).map( _ => Array(n).fill(0));
-    return board;
-
-};
-console.log(solveNQueens(4));//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// const solveNQueens = (n) => {
+//   let board = Array(n)
+//     .fill(0)
+//     .map((_) => Array(n).fill(0));
+//   return board;
+// };
+// console.log(solveNQueens(4)); //
