@@ -1,59 +1,66 @@
 //You have a list of numbers from one to one million and there is a missing number.
 // How would you find the missing number?
 
-const missNum = (arr) => {
-  //1 way for ordered array
-  // for(let i = 0; i < arr.length - 1; i++){
-  //     if(arr[i] + 1 !== arr[i + 1]){
-  //         return arr[i] + 1;
-  //     }
-  // }
-  // return null;
+//const missNum = (arr) => {
+//1 way for ordered array
+// for(let i = 0; i < arr.length - 1; i++){
+//     if(arr[i] + 1 !== arr[i + 1]){
+//         return arr[i] + 1;
+//     }
+// }
+// return null;
 
-  //2 way for both cases
-  const minNum = Math.min(...arr);
-  const maxNum = Math.max(...arr);
-  let sum1 = 0;
-  let sum2 = 0;
-  //find sum of all numbers in the array
-  //const sum1 = arr.reduce((acc, n) => n + acc, 0);
-  for (const n of arr) {
-    sum1 += n;
-  }
-  //find sum of all numbers between min and max
-  for (let i = minNum; i <= maxNum; i++) {
-    sum2 += i;
-  }
-  return sum2 - sum1 || 'There is no missing number';
-};
-console.log(missNum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13])); //12
-console.log(missNum([3, 1, 2, 5, 4, 7, 8, 9])); //6
-console.log(missNum([1, 2, 3, 4]));//There is no missing number
+//2 way for both cases
+//   const minNum = Math.min(...arr);
+//   const maxNum = Math.max(...arr);
+//   let sum1 = 0;
+//   let sum2 = 0;
+//   //find sum of all numbers in the array
+//   //const sum1 = arr.reduce((acc, n) => n + acc, 0);
+//   for (const n of arr) {
+//     sum1 += n;
+//   }
+//   //find sum of all numbers between min and max
+//   for (let i = minNum; i <= maxNum; i++) {
+//     sum2 += i;
+//   }
+//   return sum2 - sum1 || 'There is no missing number';
+// };
+// console.log(missNum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13])); //12
+// console.log(missNum([3, 1, 2, 5, 4, 7, 8, 9])); //6
+// console.log(missNum([1, 2, 3, 4]));//There is no missing number
 
 //
 // //===================How would you determine if a number is a power of two? *
 //
-// const powOfTwo = num => {
-//     // while(num % 2 === 0 && num > 1) {
-//     //     num /= 2;
-//     // }
-//     // return num === 1
-//     return Math.log2(num) % 1 === 0
-// }
-// //console.log(powOfTwo(122));//
-//
+// const powOfTwo = (num) => {
+//   // while(num % 2 === 0 && num > 1) {
+//   //     num /= 2;
+//   // }
+//   // return num === 1
+//   return Math.log2(num) % 1 === 0;
+// };
+// console.log(powOfTwo(122));
+// //
 // //===================How would you remove duplicates from a list? *
-// const removeDup = arr => {
-//     //return arr.filter((el, i) => i === arr.indexOf(el));
-//     let uniq = [];
-//     for(let i = 0; i < arr.length; i++){
-//         if(i === arr.indexOf(arr[i])){
-//             uniq.push(arr[i])
-//         }
-//     }
-//     return uniq;
-// }
-// //console.log(removeDup([1, 2, 3, 1, 3, 6, 7, 1, 9]));
+const removeDup = (arr) => {
+  //#1
+  // return arr.filter((el, i) => i === arr.indexOf(el));
+
+  //#2
+  // let uniq = [];
+  // for(let i = 0; i < arr.length; i++){
+  //     if(i === arr.indexOf(arr[i])){
+  //         uniq.push(arr[i])
+  //     }
+  // }
+  // return uniq;
+
+  //#3 using built-in data structure SET
+  // new Set(arr);//Set { 1, 2, 3, 6, 7, 9 }
+  return [...new Set(arr)];
+};
+console.log(removeDup([1, 2, 3, 1, 3, 6, 7, 1, 9])); //[ 1, 2, 3, 6, 7, 9 ]
 //
 //
 // //================How would you reverse a string? *
