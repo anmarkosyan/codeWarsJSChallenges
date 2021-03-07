@@ -24,10 +24,12 @@ const missNum = (arr) => {
   for (let i = minNum; i <= maxNum; i++) {
     sum2 += i;
   }
-  return sum2 - sum1;
+  return sum2 - sum1 || 'There is no missing number';
 };
 console.log(missNum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13])); //12
 console.log(missNum([3, 1, 2, 5, 4, 7, 8, 9])); //6
+console.log(missNum([1, 2, 3, 4]));//There is no missing number
+
 //
 // //===================How would you determine if a number is a power of two? *
 //
