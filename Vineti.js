@@ -43,11 +43,8 @@
 // console.log(powOfTwo(122));
 // //
 // //===================How would you remove duplicates from a list? *
-const removeDup = (arr) => {
+//const removeDup = (arr) => {
   //#1
-  // return arr.filter((el, i) => i === arr.indexOf(el));
-
-  //#2
   // let uniq = [];
   // for(let i = 0; i < arr.length; i++){
   //     if(i === arr.indexOf(arr[i])){
@@ -56,12 +53,15 @@ const removeDup = (arr) => {
   // }
   // return uniq;
 
+  //#2
+  // return arr.filter((el, i) => i === arr.indexOf(el));
+
   //#3 using built-in data structure SET
   // new Set(arr);//Set { 1, 2, 3, 6, 7, 9 }
-  return [...new Set(arr)];
-};
-console.log(removeDup([1, 2, 3, 1, 3, 6, 7, 1, 9])); //[ 1, 2, 3, 6, 7, 9 ]
+//   return [...new Set(arr)];
+// };
 //
+// console.log(removeDup([1, 2, 3, 1, 3, 6, 7, 1, 9])); //[ 1, 2, 3, 6, 7, 9 ]
 //
 // //================How would you reverse a string? *
 // const reverse = str => {
