@@ -66,22 +66,64 @@ Native objects is sometimes referred to as ‘Global Objects’
 // }
 // isPrototype();
 //5️⃣ make it work!!
-function Human(name, age) {
-  this.name = name;
-  this.age = age;
+// function Human(name, age) {
+//   this.name = name;
+//   this.age = age;
+// }
+//
+// function Man(name, age) {
+//   //write-your-code-here
+//   Human.call(this, name, age);
+// }
+// //write-your-code-here
+// Man.prototype = Object.create(Human.prototype);
+// Man.prototype.constructor = Man;
+//
+// function check() {
+//   const obj = new Man("Tommy Tan", 20);
+//   console.log(obj.name); //should print name
+//   console.log(obj instanceof Human); //should be true
+// }
+// check();
+//6️⃣
+class Vehicle {
+  constructor(fuel) {
+    this.fuel = fuel;
+  }
+  turnOn() {
+    //write-code-here
+    console.log("Turned on");
+  }
+  turnOff() {
+    //write-code-here
+    console.log("Turned off");
+  }
 }
 
-function Man(name, age) {
-  //write-your-code-here
-  Human.call(this, name, age);
-}
-//write-your-code-here
-Man.prototype = Object.create(Human.prototype);
-Man.prototype.constructor = Man;
+class Car extends Vehicle {
+  //write-code-here
+  constructor(fuel, isParked) {
+    super(fuel, isParked);
+    this.isParked = isParked;
+  }
 
-function check() {
-  const obj = new Man("Tommy Tan", 20);
-  console.log(obj.name); //should print name
-  console.log(obj instanceof Human); //should be true
+  turnOn() {
+    this.isParked && this.fuel < 500
+      ? console.log("Refill Fuel")
+      : super.turnOn();
+  }
+
+  turnOff() {
+    !this.isParked ? console.log("Car not parked") : super.turnOff();
+  }
 }
-check();
+
+const car1 = new Car(1000, true);
+const car2 = new Car(400, true);
+const car3 = new Car(1500, false);
+car1.turnOn(); //"Turned on"
+car1.turnOff(); //"Turned off"
+car2.turnOn(); //"Refill Fuel"
+car2.turnOff(); //"Turned off"
+car3.turnOn(); //Turned on"
+car3.turnOff(); //"Car not parked"
